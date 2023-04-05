@@ -1,0 +1,38 @@
+.blur-container {
+  font-family: 'Indie Flower', cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.blurry-text {
+  font-size: 36px;
+  color: #333;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  filter: blur(10px);
+  transition: filter 1.5s ease;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.blurry-text:hover {
+  filter: none;
+  cursor: zoom-in;
+}
+
+.blurry-text:hover::after {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}

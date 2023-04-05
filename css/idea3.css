@@ -1,0 +1,53 @@
+.hidden-text-grid {
+  display: grid;
+  font-family: 'Indie Flower', cursive;
+  font-size: 42px;
+  grid-template-areas: 
+    "top1 empty"
+    "top2 empty"
+    "vert horiz";
+  grid-template-columns: 3fr 4fr;
+  grid-template-rows: auto auto;
+
+  transform: rotate(-45deg) translateX(40px);
+}
+
+.hidden-text-grid p {
+  margin: 0;
+  padding: 0;
+}
+
+.hidden-text-word {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hidden-text-word:nth-of-type(1) {
+  grid-area: top1;
+  text-align: right;
+}
+
+.hidden-text-word:nth-of-type(2) {
+  grid-area: top2;
+  text-align: right;
+}
+
+.hidden-text-word:nth-of-type(3) {
+  writing-mode: vertical-rl;
+  grid-area: vert;
+}
+
+.hidden-text-word:nth-of-type(4) {
+  grid-area: horiz;
+  align-self: center;
+}
+
+#reveal-button {
+  font-size: 25px;
+  margin: auto;
+  z-index: 99999;
+  transform: translateY(500px) rotate(-45deg);
+  padding-bottom: 3px;
+}
+
+/* inspired by https://labs.jensimmons.com/2017/03-004.html */
